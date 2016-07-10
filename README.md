@@ -17,3 +17,6 @@ Just talk to it:
 
 ### Configuration
 You can change nick, channel list and irc host in `CONFIG.json`. Try not to break the JSON file.
+
+### Adding commands/modules
+Create a `.js` file in `irc_modules`, it will be automagically loaded. Be sure to export a function!
