@@ -25,9 +25,15 @@ for(var key in botModules) {
 
 
 // Logging
-client.addListener('message', function(from, to, text, raw) {
+client.addListener('message', function(from, to, text) {
 	if(to === client.nick) to = from;
 	console.log('[' + to + '] <' + from + '> ' + text);
+});
+
+client.addListener('notice', function(from, to, text) {
+	if(to === client.nick) to = from;
+	if(from === null) from = 'Server';
+	console.log('[' + to + '] -' + from + '- ' + text);
 });
 
 client.addListener('error', function(err) {
