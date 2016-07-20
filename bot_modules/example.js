@@ -1,8 +1,9 @@
 function ExampleModule(client, config) {
 	client.addListener('message', (from, to, text) => {
-		if(text === 'hello world')
-			client.notice(from, 'I am an example!');
-	}
+		if(text === 'hello') {
+			client.say(from, 'world');
+		}
+	});
 }
 
 module.exports = ExampleModule;
